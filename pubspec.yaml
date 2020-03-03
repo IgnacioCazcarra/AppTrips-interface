@@ -77,6 +77,11 @@ flutter:
     - assets/images/sri3.jpg
     - assets/images/sri4.jpg
     - assets/images/sri5.jpg
+    - assets/images/japan1.jpg
+    - assets/images/japan2.jpg
+    - assets/images/japan3.jpg
+    - assets/images/japan4.jpg
+
   fonts:
     - family: Spartan
     - family: Roboto

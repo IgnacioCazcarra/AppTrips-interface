@@ -5,7 +5,7 @@ import 'package:flutteraaaaa/navigate_button.dart';
 import 'package:flutteraaaaa/reviewList.dart';
 import 'package:flutteraaaaa/user_review.dart';
 import 'package:flutteraaaaa/gradient_back.dart';
-import 'description_place.dart';
+import 'package:flutteraaaaa/description_place.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //

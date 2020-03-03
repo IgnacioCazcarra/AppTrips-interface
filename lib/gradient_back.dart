@@ -24,7 +24,7 @@ class GradientBack extends StatelessWidget{
     child: Text(
     title,
     style: TextStyle(
-    fontSize: 30.0,
+    fontSize: 25.0,
     fontFamily: title,
     color: Colors.white,
       fontWeight: FontWeight.bold

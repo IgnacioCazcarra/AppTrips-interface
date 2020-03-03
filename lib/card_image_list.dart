@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutteraaaaa/card_image.dart';
+import 'package:flutteraaaaa/card_images.dart';
 
 
 class CardList extends StatelessWidget{
@@ -7,7 +7,7 @@ class CardList extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      height: 280.0,
+      height: 300.0,
       child: ListView(
         addAutomaticKeepAlives: false,
         physics: AlwaysScrollableScrollPhysics(),

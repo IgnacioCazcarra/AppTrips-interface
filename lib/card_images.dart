@@ -12,6 +12,7 @@ class CardImage extends StatelessWidget{
     // TODO: implement build
     final card = Container(
       width: 300.0,
+      height: 250.0,
       margin: EdgeInsets.only(
         top: 70.0,
         left: 32.0,
@@ -23,7 +24,7 @@ class CardImage extends StatelessWidget{
           path_image
           ),
         ),
-      borderRadius: BorderRadius.all(Radius.circular(13.0)),
+        borderRadius: BorderRadius.all(Radius.circular(13.0)),
         shape: BoxShape.rectangle,
         boxShadow: <BoxShadow>[
           BoxShadow(
