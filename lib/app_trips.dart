@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutteraaaaa/home_trips.dart';
+import 'package:flutteraaaaa/Place/ui/screens/home_trips.dart';
+import 'package:flutteraaaaa/Place/ui/screens/search_trips.dart';
 import 'package:flutteraaaaa/User/ui/screens/profile_trips.dart';
-import 'package:flutteraaaaa/search_trips.dart';
 
 class AppTrips extends StatefulWidget{
   @override

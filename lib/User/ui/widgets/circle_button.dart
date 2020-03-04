@@ -6,7 +6,8 @@ class CircleButton extends StatelessWidget{
   String description;
   IconData icon;
   Color circleColor;
-  CircleButton(this.icon,this.circleColor,this.iconSize, this.description);
+  bool mini;
+  CircleButton(this.icon,this.circleColor,this.iconSize, this.description,this.mini);
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +28,9 @@ class CircleButton extends StatelessWidget{
               right: 10.0
         ),
           child: FloatingActionButton(
-               mini: true,
+               mini: mini,
                backgroundColor: circleColor,
-               child: Icon(Icons.account_circle,color: Colors.indigo,size: iconSize),
+               child: Icon(icon,color: Colors.indigo,size: iconSize),
         ),
     )
     );

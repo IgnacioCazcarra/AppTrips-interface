@@ -13,11 +13,11 @@ class ProfileButtons extends StatelessWidget{
       child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CircleButton(Icons.bookmark_border,Colors.white70, 15, "See the places you've saved"),
-            CircleButton(Icons.card_giftcard, Colors.white70, 15, "Would you like to give someone a giftcard? :-)"),
-            CircleButton(Icons.add, Colors.white, 17, "You've pressed the add button"),
-            CircleButton(Icons.mail_outline, Colors.white70, 15, "Check your mailbox"),
-            CircleButton(Icons.account_circle, Colors.white70, 17, "Edit profile")
+            CircleButton(Icons.bookmark_border,Colors.white70, 15, "See the places you've saved",true),
+            CircleButton(Icons.card_giftcard, Colors.white70, 15, "Would you like to give someone a giftcard? :-)",true),
+            CircleButton(Icons.add, Colors.white, 17, "You've pressed the add button",false),
+            CircleButton(Icons.mail_outline, Colors.white70, 15, "Check your mailbox",true),
+            CircleButton(Icons.account_circle, Colors.white70, 17, "Edit profile",true)
           ],
         )
     );

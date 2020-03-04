@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/app_trips.dart';
-import 'package:flutteraaaaa/headerAppbar.dart';
-import 'package:flutteraaaaa/navigate_button.dart';
-import 'package:flutteraaaaa/reviewList.dart';
-import 'package:flutteraaaaa/user_review.dart';
-import 'package:flutteraaaaa/gradient_back.dart';
-import 'package:flutteraaaaa/description_place.dart';
+
 
 void main() => runApp(MyApp());
 
