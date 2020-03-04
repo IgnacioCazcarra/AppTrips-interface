@@ -45,7 +45,7 @@ class ProfileInfo extends StatelessWidget{
           fontSize: 14.0,
           fontWeight: FontWeight.w600,
           color: Colors.white,
-          fontFamily: "Roboto"
+          fontFamily: "Spartan"
         ),
       ),
     );
@@ -61,7 +61,7 @@ class ProfileInfo extends StatelessWidget{
             fontSize: 11.0,
             fontWeight: FontWeight.w400,
             color: Colors.white70,
-            fontFamily: "Roboto"
+            fontFamily: "Spartan"
         ),
       ),
     );
