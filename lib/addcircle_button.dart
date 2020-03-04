@@ -15,8 +15,7 @@ class AddcircleButton extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.only(
             left: 15.0,
-            right: 15.0,
-            bottom: 2.0
+            right: 15.0
           ),
           child: FloatingActionButton(
               backgroundColor: Colors.white,

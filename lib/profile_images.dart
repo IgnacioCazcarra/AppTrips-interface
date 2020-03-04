@@ -47,7 +47,7 @@ class ProfileImages extends StatelessWidget{
     );
 
     final image = Container(
-      width: 400.0,
+      width: 330.0,
       height: 170.0,
       alignment: Alignment.center,
       margin: EdgeInsets.only(
@@ -78,7 +78,7 @@ class ProfileImages extends StatelessWidget{
         image,
         description,
         Container(
-          alignment: Alignment(0.5,1.9),
+          alignment: Alignment(0.8, 1.25),
           child: FavButton()
         ),
       ],

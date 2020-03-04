@@ -17,7 +17,7 @@ class ProfileInfo extends StatelessWidget{
       height: 70,
       width: 70,
       margin: EdgeInsets.only(
-        top: 80,
+        top: 20,
         left: 30,
         bottom: 25
       ),
@@ -35,7 +35,7 @@ class ProfileInfo extends StatelessWidget{
 
     final name = Container(
       margin: EdgeInsets.only(
-        top: 95,
+        top: 35,
         left: 24,
       ),
       child: Text(

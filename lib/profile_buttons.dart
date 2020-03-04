@@ -9,9 +9,12 @@ class ProfileButtons extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Stack(
-      children: <Widget>[
-        Row(
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: 0.0,
+          vertical: 5.0
+      ),
+      child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             BookmarkButton(),
@@ -21,7 +24,6 @@ class ProfileButtons extends StatelessWidget{
             AccountcircleButton()
           ],
         )
-      ],
     );
   }
 

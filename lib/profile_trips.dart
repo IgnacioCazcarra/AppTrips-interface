@@ -10,14 +10,24 @@ class ProfileTrips extends StatelessWidget{
 
     return Stack(
       children: <Widget>[
-        GradientBack("Profile"),
-        Column(
+        GradientBack(""),
+        ListView(
+          scrollDirection: Axis.vertical,
           children: <Widget>[
+            Text(
+              "Profile",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 25.0
+              ),
+            ),
             ProfileInfo("assets/images/traveler.jpg", "William the traveler", "william@email.com"),
             ProfileButtons(),
             ProfileimagesList()
           ],
-        )
+        ),
       ],
     );
   }
