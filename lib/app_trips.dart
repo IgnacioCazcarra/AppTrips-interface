@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/home_trips.dart';
-import 'package:flutteraaaaa/profile_trips.dart';
+import 'package:flutteraaaaa/User/ui/screens/profile_trips.dart';
 import 'package:flutteraaaaa/search_trips.dart';
 
 class AppTrips extends StatefulWidget{

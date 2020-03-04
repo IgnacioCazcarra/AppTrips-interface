@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 
-class AccountcircleButton extends StatelessWidget{
+class CircleButton extends StatelessWidget{
+
+  double iconSize;
+  String description;
+  IconData icon;
+  Color circleColor;
+  CircleButton(this.icon,this.circleColor,this.iconSize, this.description);
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
 
     return InkWell(
         onTap: (){
           Scaffold.of(context).showSnackBar(
               SnackBar(
-                content: Text("Edit profile"),
+                content: Text(description),
               )
           );
         },
@@ -20,8 +28,8 @@ class AccountcircleButton extends StatelessWidget{
         ),
           child: FloatingActionButton(
                mini: true,
-               backgroundColor: Colors.white70,
-               child: Icon(Icons.account_circle,color: Colors.indigo,size: 17),
+               backgroundColor: circleColor,
+               child: Icon(Icons.account_circle,color: Colors.indigo,size: iconSize),
         ),
     )
     );

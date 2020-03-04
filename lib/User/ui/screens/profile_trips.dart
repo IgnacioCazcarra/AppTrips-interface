@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/gradient_back.dart';
-import 'package:flutteraaaaa/profile_buttons.dart';
+import 'package:flutteraaaaa/User/ui/widgets/profile_buttons.dart';
 import 'package:flutteraaaaa/profile_images_list.dart';
 import 'package:flutteraaaaa/profile_info.dart';
 class ProfileTrips extends StatelessWidget{
