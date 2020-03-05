@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutteraaaaa/User/bloc/bloc_user.dart';
 import 'package:flutteraaaaa/User/ui/widgets/circle_button.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class ProfileButtons extends StatelessWidget{
+  UserBloc userBloc;
+
   @override
   Widget build(BuildContext context) {
+    userBloc = BlocProvider.of(context);
     // TODO: implement build
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -13,11 +18,14 @@ class ProfileButtons extends StatelessWidget{
       child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CircleButton(Icons.bookmark_border,Colors.white70, 15, "See the places you've saved",true),
-            CircleButton(Icons.card_giftcard, Colors.white70, 15, "Would you like to give someone a giftcard? :-)",true),
-            CircleButton(Icons.add, Colors.white, 17, "You've pressed the add button",false),
-            CircleButton(Icons.mail_outline, Colors.white70, 15, "Check your mailbox",true),
-            CircleButton(Icons.account_circle, Colors.white70, 17, "Edit profile",true)
+            //Mostrar fotos guardadas
+            CircleButton(Icons.bookmark_border,Colors.white70, 15, "See the photos you've saved",true, () => {} ),
+            //Agregar fotos
+            CircleButton(Icons.add, Colors.white, 17, "You've pressed the add button",false, () => {} ),
+            //Cerrar sesion
+            CircleButton(Icons.exit_to_app, Colors.white70, 17, "Edit profile",true, () => {
+              userBloc.signOut()
+            } )
           ],
         )
     );

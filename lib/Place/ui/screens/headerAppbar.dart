@@ -9,7 +9,7 @@ class HeaderAppbar extends StatelessWidget{
     // TODO: implement build
     return Stack(
       children: <Widget>[
-        GradientBack("Popular this week"),
+        GradientBack("Popular this week",250.0),
         CardList(),
       ],
     );

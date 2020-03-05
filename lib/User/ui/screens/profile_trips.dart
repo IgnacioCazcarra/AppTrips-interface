@@ -12,7 +12,7 @@ class ProfileTrips extends StatelessWidget{
 
     return Stack(
       children: <Widget>[
-        GradientBack(""),
+        GradientBack("",250.0),
         ListView(
           scrollDirection: Axis.vertical,
           children: <Widget>[

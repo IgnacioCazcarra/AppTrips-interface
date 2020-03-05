@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutteraaaaa/User/ui/screens/signin_screen.dart';
 import 'package:flutteraaaaa/app_trips.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:flutteraaaaa/User/bloc/bloc_user.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        home: AppTrips()
+        home: SignInScreen(),
     ),
        bloc: UserBloc());
   }

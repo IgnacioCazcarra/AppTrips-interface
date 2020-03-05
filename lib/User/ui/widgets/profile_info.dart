@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutteraaaaa/User/bloc/bloc_user.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class ProfileInfo extends StatelessWidget{
+
+  UserBloc userBloc;
 
   String imagePath;
   String profileName;
@@ -11,9 +15,27 @@ class ProfileInfo extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    userBloc = BlocProvider.of<UserBloc>(context);
 
+    return StreamBuilder(
+      stream: userBloc.streamFirebase,
+      builder: (BuildContext context, AsyncSnapshot snapshot){
 
-    final image = Container(
+        switch(snapshot.connectionState){
+          case ConnectionState.waiting:
+            return CircularProgressIndicator();
+          case ConnectionState.none:
+            return CircularProgressIndicator();
+          case ConnectionState.active:
+            return null;
+          case ConnectionState.done:
+            return CircularProgressIndicator();
+          default: return null;
+        }
+      }
+    );
+
+    /*final image = Container(
       height: 70,
       width: 70,
       margin: EdgeInsets.only(
@@ -77,8 +99,17 @@ class ProfileInfo extends StatelessWidget{
           ],
         ),
       ],
-    );
+    );*/
 
   }
+
+  Widget showProfileInfo(AsyncSnapshot snapshot){
+    if(!snapshot.hasData || snapshot.hasError){
+      print("El usuario no ha sido logueado");
+    }
+    else print("Usuario logueado");
+
+  }
+
 
 }
