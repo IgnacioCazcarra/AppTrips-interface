@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/Place/ui/widgets/card_image_list.dart';
+import 'package:flutteraaaaa/User/ui/widgets/title_header.dart';
 import 'package:flutteraaaaa/widgets/gradient_back.dart';
 
 
@@ -9,7 +10,8 @@ class HeaderAppbar extends StatelessWidget{
     // TODO: implement build
     return Stack(
       children: <Widget>[
-        GradientBack("Popular this week",250.0),
+        GradientBack(height: 250.0),
+        TitleHeader(title: "Popular this week"),
         CardList(),
       ],
     );

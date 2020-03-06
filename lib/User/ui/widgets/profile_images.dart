@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutteraaaaa/Place/model/place.dart';
 import 'package:flutteraaaaa/widgets/fav_button.dart';
 
 class ProfileImages extends StatelessWidget{
 
-  String path_image;
-  String name;
-  String description;
-  String steps;
-  ProfileImages(this.path_image,this.name,this.description,this.steps);
+  Place place;
+
+  ProfileImages(this.place);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class ProfileImages extends StatelessWidget{
         bottom: 5.0
       ),
       child: Text(
-        name,
+        place.name,
         style: TextStyle(
             fontSize: 12.0,
             fontFamily: "Spartan",
@@ -35,7 +34,7 @@ class ProfileImages extends StatelessWidget{
         right: 8.0
       ),
       child: Text(
-        description,
+        place.description,
         textAlign: TextAlign.start,
         style: TextStyle(
             fontSize: 7.0,
@@ -53,7 +52,7 @@ class ProfileImages extends StatelessWidget{
           top: 10.0
       ),
       child: Text(
-        steps,
+        place.steps,
         textAlign: TextAlign.start,
         style: TextStyle(
             fontSize: 10.0,
@@ -106,8 +105,8 @@ class ProfileImages extends StatelessWidget{
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(
-              path_image
+          image: NetworkImage(
+              place.imagePath
           ),
         ),
         borderRadius: BorderRadius.all(Radius.circular(13.0)),

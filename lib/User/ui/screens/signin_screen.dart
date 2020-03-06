@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:flutteraaaaa/User/model/user.dart';
 import 'package:flutteraaaaa/app_trips.dart';
 import 'package:flutteraaaaa/app_trips_cupertino.dart';
 import 'package:flutteraaaaa/widgets/gradient_back.dart';
@@ -22,10 +23,12 @@ class SignInScreen extends StatefulWidget{
 class _SignInScreen extends State<SignInScreen>{
 
   UserBloc userBloc;
+  double fullScreenWidth;
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    fullScreenWidth = MediaQuery.of(context).size.width;
     userBloc = BlocProvider.of(context);
     return _handleCurrentSession();
   }
@@ -48,18 +51,21 @@ class _SignInScreen extends State<SignInScreen>{
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          GradientBack("",null),
+          GradientBack(height: null),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-               "Welcome.\nThis is your travel app.",
-               style: TextStyle(
-                 color: Colors.white,
-                 fontWeight: FontWeight.bold,
-                 fontSize: 30.0,
-                 fontFamily: "Spartan"
-               ),
+              Container(
+                width: fullScreenWidth,
+                child: Text(
+                  "Welcome.\nThis is your travel app.",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30.0,
+                      fontFamily: "Spartan"
+                  ),
+                ),
               ),
               SignInButton(
                 Buttons.Google,
@@ -69,7 +75,16 @@ class _SignInScreen extends State<SignInScreen>{
                   right: 40.0,
                 ),
                 onPressed: () {
-                  userBloc.signIn().then((FirebaseUser user) => print(user));
+                  userBloc.signIn().then((FirebaseUser user){
+                    userBloc.updateUserData(User(
+                      uid: user.uid,
+                      imagePath: user.photoUrl,
+                      name: user.displayName,
+                      email: user.email,
+                    )
+                    );
+                  }
+                  );
                 },
               ),
 

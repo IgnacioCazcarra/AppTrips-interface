@@ -36,6 +36,7 @@ class _FavButton extends State<FavButton>{
       splashColor: Colors.pink,
       child: _isFavorited ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
       onPressed: _toggleFavorite,
+      heroTag: null,
     );
   }
 
