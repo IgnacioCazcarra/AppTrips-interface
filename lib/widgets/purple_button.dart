@@ -1,23 +1,20 @@
 
 import 'package:flutter/material.dart';
 
-class NavigateButton extends StatelessWidget{
+class PurpleButton extends StatelessWidget{
 
-  String navigateButton;
+  final String text;
+  final VoidCallback onPressed;
 
-  NavigateButton(this.navigateButton);
+  PurpleButton({Key key, this.text,this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return InkWell(
-      onTap: (){
-        Scaffold.of(context).showSnackBar(
-          SnackBar(
-            content: Text("You've pressed the navigate button"),
-          )
-        );
-      },
+
+      onTap: onPressed,
+
       child: Container(
         margin: EdgeInsets.only(
           top: 5.0,
@@ -42,7 +39,7 @@ class NavigateButton extends StatelessWidget{
       ),
         child: Center(
           child: Text(
-            navigateButton,
+            text,
             style: TextStyle(
               fontFamily: "Roboto",
               fontWeight: FontWeight.bold,

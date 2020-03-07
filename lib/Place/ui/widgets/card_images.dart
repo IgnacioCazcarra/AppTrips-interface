@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutteraaaaa/widgets/fav_button.dart';
+import 'package:flutteraaaaa/widgets/floating_action_button.dart';
 
 class CardImage extends StatelessWidget{
 
-  String path_image;
+  final String image_path;
+  final double height;
+  final double width;
+  final IconData icon;
+  final VoidCallback onPressedFABIcon;
 
-  CardImage(this.path_image);
+  CardImage({Key key, @required this.image_path, @required this.height, @required this.width, @required this.icon, @required this.onPressedFABIcon});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     final card = Container(
-      width: 300.0,
-      height: 250.0,
+      width: width,
+      height: height,
       margin: EdgeInsets.only(
         top: 70.0,
-        left: 32.0,
+        right: 10,
+        left: 10
       ),
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
           image: AssetImage(
-          path_image
+          image_path
           ),
         ),
         borderRadius: BorderRadius.all(Radius.circular(13.0)),
@@ -39,7 +44,7 @@ class CardImage extends StatelessWidget{
       alignment: Alignment(0.9,1.1),
       children: <Widget>[
         card,
-        FavButton()
+        Fab(icon: Icons.favorite,onPressedFAB: (){})
       ],
     );
   }

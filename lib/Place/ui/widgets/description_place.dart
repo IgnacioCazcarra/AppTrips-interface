@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutteraaaaa/widgets/navigate_button.dart';
+import 'package:flutteraaaaa/widgets/purple_button.dart';
 
 class Description_place extends StatelessWidget {
 
@@ -31,7 +31,7 @@ class Description_place extends StatelessWidget {
     );
     final starsHalf = Container(
       margin: EdgeInsets.only(
-          top: 280.0,
+          top: 300.0,
           left: 3.0,
           right: 2.0
       ),
@@ -43,7 +43,7 @@ class Description_place extends StatelessWidget {
 
     final starsBorder = Container(
       margin: EdgeInsets.only(
-          top: 280.0,
+          top: 300.0,
           left: 3.0,
           right: 2.0
       ),
@@ -55,7 +55,7 @@ class Description_place extends StatelessWidget {
 
     final stars = Container(
       margin: EdgeInsets.only(
-          top: 280.0,
+          top: 300.0,
           left: 3.0,
           right: 2.0
       ),
@@ -69,7 +69,7 @@ class Description_place extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-            top: 280.0,
+            top: 300.0,
             left: 25.0,
             right: 20.0
           ),
@@ -97,7 +97,7 @@ class Description_place extends StatelessWidget {
       children: <Widget>[
         nameTitle,
         description,
-        NavigateButton("Navigate"),
+        PurpleButton(text: "Navigate", onPressed: (){}),
       ],
     );
   }

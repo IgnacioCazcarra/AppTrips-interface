@@ -6,7 +6,6 @@ class Place{
   String uid;
   String name;
   int likes;
-  String steps;
   String description;
   String imagePath;
   User userOwner;
@@ -17,7 +16,6 @@ class Place{
     @required this.userOwner,
     @required this.name,
     @required this.description,
-    this.steps,
     this.likes
   });
 

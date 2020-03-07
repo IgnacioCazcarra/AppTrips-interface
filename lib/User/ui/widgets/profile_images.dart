@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/Place/model/place.dart';
-import 'package:flutteraaaaa/widgets/fav_button.dart';
+import 'package:flutteraaaaa/widgets/floating_action_button.dart';
 
 class ProfileImages extends StatelessWidget{
 
@@ -20,7 +20,7 @@ class ProfileImages extends StatelessWidget{
       child: Text(
         place.name,
         style: TextStyle(
-            fontSize: 12.0,
+            fontSize: 13.0,
             fontFamily: "Spartan",
             fontWeight: FontWeight.bold,
             color: Colors.black
@@ -37,7 +37,7 @@ class ProfileImages extends StatelessWidget{
         place.description,
         textAlign: TextAlign.start,
         style: TextStyle(
-            fontSize: 7.0,
+            fontSize: 10.0,
             fontFamily: "Spartan",
             fontWeight: FontWeight.w500,
             color: Colors.grey
@@ -45,17 +45,17 @@ class ProfileImages extends StatelessWidget{
       ),
     );
 
-    final imageSteps = Container(
+    final imageLikes = Container(
       margin: EdgeInsets.only(
           left: 3.0,
           right: 8.0,
-          top: 10.0
+          top: 15.0
       ),
       child: Text(
-        place.steps,
+        "Likes: ${place.likes}",
         textAlign: TextAlign.start,
         style: TextStyle(
-            fontSize: 10.0,
+            fontSize: 14.0,
             fontFamily: "Spartan",
             fontWeight: FontWeight.w500,
             color: Colors.orange
@@ -88,7 +88,7 @@ class ProfileImages extends StatelessWidget{
             children: <Widget>[
               imageName,
               imageDescription,
-              imageSteps
+              imageLikes
             ],
           ),
         ),
@@ -127,8 +127,8 @@ class ProfileImages extends StatelessWidget{
         image,
         imageReview,
         Container(
-          alignment: Alignment(0.8, 1.25),
-          child: FavButton()
+          alignment: Alignment(0.5, 1.25),
+          child: Fab(icon: Icons.favorite,onPressedFAB: (){},)
         ),
       ],
     );

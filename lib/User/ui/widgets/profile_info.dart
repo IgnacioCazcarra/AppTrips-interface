@@ -63,6 +63,7 @@ class ProfileInfo extends StatelessWidget{
     );
 
     return Container(
+      margin: EdgeInsets.only(bottom: 15),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 class CircleButton extends StatefulWidget {
 
   double iconSize;
-  String description;
   IconData icon;
   Color circleColor;
   bool mini;
   final VoidCallback onPressed;
 
-  CircleButton(this.icon, this.circleColor, this.iconSize, this.description,
+  CircleButton(this.icon, this.circleColor, this.iconSize,
       this.mini, @required this.onPressed);
 
   @override
