@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutteraaaaa/Place/model/place.dart';
 import 'package:flutteraaaaa/User/model/user.dart';
+import 'package:flutteraaaaa/User/ui/widgets/profile_images.dart';
 
 class CloudFirestoreAPI{
 
@@ -34,12 +35,31 @@ class CloudFirestoreAPI{
           {'name': place.name,
           'description': place.description,
           'likes': place.likes,
-          'UserOwner': "${USERS}/${user.uid}" //reference
-          }
-      );
+          'imagePath': place.imagePath,
+          'UserOwner': _db.document("${USERS}/${user.uid}") //reference
+          }).then((DocumentReference dr){
+          dr.get().then((DocumentSnapshot snapshot ){
+           snapshot.documentID;
+           DocumentReference refUsers = _db.collection(USERS).document(user.uid);
+           refUsers.updateData({
+             'myPlaces': FieldValue.arrayUnion([_db.document("${PLACES}/${snapshot.documentID}")])
+           });
+         });
+       });
     }
     );
 
   }
+
+  List<ProfileImages> buildPlaces(List<DocumentSnapshot> placesListSnapshot){
+    List<ProfileImages> profileImages = List<ProfileImages>();
+    placesListSnapshot.forEach((p){
+      profileImages.add(ProfileImages(Place(
+        name: p.data['name'], imagePath: p.data['imagePath'], description: p.data['description'], likes: p.data['likes']
+      )));
+    });
+    return profileImages;
+  }
+
 
 }

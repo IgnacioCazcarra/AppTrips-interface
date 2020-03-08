@@ -35,9 +35,9 @@ class ProfileInfo extends StatelessWidget{
       ),
       child: Text(
         user.name,
-        textAlign: TextAlign.left,
+        textAlign: TextAlign.justify,
         style: TextStyle(
-          fontSize: 20.0,
+          fontSize: 18.0,
           fontWeight: FontWeight.w600,
           color: Colors.white,
           fontFamily: "Spartan"
@@ -52,9 +52,9 @@ class ProfileInfo extends StatelessWidget{
       ),
       child: Text(
         user.email,
-        textAlign: TextAlign.left,
+        textAlign: TextAlign.justify,
         style: TextStyle(
-            fontSize: 15.0,
+            fontSize: 13.0,
             fontWeight: FontWeight.w400,
             color: Colors.white70,
             fontFamily: "Spartan"

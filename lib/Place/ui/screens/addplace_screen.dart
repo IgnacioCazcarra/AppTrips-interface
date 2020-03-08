@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/Place/model/place.dart';
 import 'package:flutteraaaaa/Place/ui/widgets/card_images.dart';
@@ -82,7 +84,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen>{
                 //Aca iria la foto,
                 Container(
                   margin: EdgeInsets.only(bottom: 20, right: 10,left: 10),
-                  child: CardImage(image_path: "assets/images/japan2.jpg", height: 250.0, width: 350.0, icon: Icons.photo_camera, onPressedFABIcon: (){}),
+                  child: CardImage(image_path: widget.image.path, height: 250.0, width: 350.0, icon: Icons.photo_camera, onPressedFABIcon: (){}),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 30),
@@ -97,13 +99,29 @@ class _AddPlaceScreen extends State<AddPlaceScreen>{
                   text: "Submit",
                   onPressed: (){
                     //1-Firebase Storage
+                    userBloc.currentUser.then((FirebaseUser user){
+                      if(user!=null){
+                        String uid = user.uid;
+                        String path = "${uid}/${DateTime.now().toString()}.jpg";
 
-                    //2-Cloud firestore
-                    userBloc.updatePlaceData(Place(
-                      name: _controllerTitlePlace.text,
-                      description: _controllerDescriptionPlace.text,
-                      likes: 0,
-                    )).whenComplete((){Navigator.pop(context);});
+                        userBloc.uploadFile(path, widget.image)
+                            .then((StorageUploadTask storageUploadTask){
+                              storageUploadTask.onComplete.then((StorageTaskSnapshot snapshot){
+                                snapshot.ref.getDownloadURL().then((imagePath){
+                                  print(imagePath);
+
+                                  //2-Cloud firestore
+                                  userBloc.updatePlaceData(Place(
+                                      name: _controllerTitlePlace.text,
+                                      description: _controllerDescriptionPlace.text,
+                                      likes: 0,
+                                      imagePath: imagePath
+                                  )).whenComplete((){Navigator.pop(context);});
+                                });
+                              });
+                            });
+                      }
+                    });
                   }
                 ),
               ],

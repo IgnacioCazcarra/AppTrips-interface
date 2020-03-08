@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/Place/ui/screens/addplace_screen.dart';
 import 'package:flutteraaaaa/User/bloc/bloc_user.dart';
 import 'package:flutteraaaaa/User/ui/widgets/circle_button.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfileButtons extends StatelessWidget{
 
@@ -26,9 +26,13 @@ class ProfileButtons extends StatelessWidget{
 
             } ),
             //Agregar fotos
-            CircleButton(Icons.add_a_photo, Colors.white, 30,false, (){
-              File image;
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddPlaceScreen(image: image)));
+            CircleButton(Icons.add_a_photo, Colors.white, 30,false, () async{
+              File image = await
+              ImagePicker.pickImage(source: ImageSource.camera)
+                  .then((File image){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddPlaceScreen(image: image)));
+                  })
+                  .catchError((onError)=>print(onError));
             } ),
             //Cerrar sesion
             CircleButton(Icons.exit_to_app, Colors.white70, 17,true, () => {
