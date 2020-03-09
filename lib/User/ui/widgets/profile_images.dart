@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteraaaaa/Place/model/place.dart';
 import 'package:flutteraaaaa/widgets/floating_action_button.dart';
@@ -5,8 +6,8 @@ import 'package:flutteraaaaa/widgets/floating_action_button.dart';
 class ProfileImages extends StatelessWidget{
 
   Place place;
-
-  ProfileImages(this.place);
+  bool internet = true;
+  ProfileImages(this.place,this.internet);
 
   @override
   Widget build(BuildContext context) {
@@ -105,9 +106,7 @@ class ProfileImages extends StatelessWidget{
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(
-              place.imagePath
-          ),
+          image: internet?CachedNetworkImageProvider(place.imagePath):AssetImage(place.imagePath),
         ),
         borderRadius: BorderRadius.all(Radius.circular(13.0)),
         shape: BoxShape.rectangle,

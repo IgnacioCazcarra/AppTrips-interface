@@ -84,7 +84,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen>{
                 //Aca iria la foto,
                 Container(
                   margin: EdgeInsets.only(bottom: 20, right: 10,left: 10),
-                  child: CardImage(image_path: widget.image.path, height: 250.0, width: 350.0, icon: Icons.photo_camera, onPressedFABIcon: (){}),
+                  child: CardImage(image_path: widget.image.path, height: 250.0, width: 350.0, icon: Icons.photo_camera, onPressedFABIcon: (){},internet: false,),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 30),

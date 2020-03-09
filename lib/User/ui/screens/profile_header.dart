@@ -6,29 +6,13 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 
 class ProfileHeader extends StatelessWidget {
-  UserBloc userBloc;
   User user;
+
+  ProfileHeader(@required this.user);
 
   @override
   Widget build(BuildContext context) {
-    userBloc = BlocProvider.of<UserBloc>(context);
 
-    return StreamBuilder(
-      stream: userBloc.streamFirebase,
-      // ignore: missing_return
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        switch (snapshot.connectionState) {
-          case ConnectionState.waiting:
-            return CircularProgressIndicator();
-          case ConnectionState.none:
-            return CircularProgressIndicator();
-          case ConnectionState.active:
-            return showProfileData(snapshot);
-          case ConnectionState.done:
-            return showProfileData(snapshot);
-        }
-      },
-    );
   }
 
   Widget showProfileData(AsyncSnapshot snapshot) {
